@@ -16,3 +16,14 @@ nav {
   flex-direction: row;
   gap: 20px;
 }
+
+footer {
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: gray;
+}
