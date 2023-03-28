@@ -17,8 +17,8 @@ const displayMeal = (data) => {
             </div>
           </div>
             <div class="second-part">
-            <button class="sea-meal">Comment</button>
-            <button>Reservation</button>
+            <button class="comment-btn">Comment</button>
+            <button class="reserve-btn">Reservation</button>
             </div>
           </div>
   `;
