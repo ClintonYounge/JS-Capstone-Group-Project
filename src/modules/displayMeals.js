@@ -1,4 +1,7 @@
+import reservationPage from './reservation.js';
+
 const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=g';
+
 const mealData = document.querySelector('.meal-cards');
 
 const displayMeal = (data) => {
@@ -31,6 +34,7 @@ const display = async () => {
   data.meals.forEach((food) => {
     displayMeal(food);
   });
+  reservationPage(data.meals);
 };
 
 export default display;
