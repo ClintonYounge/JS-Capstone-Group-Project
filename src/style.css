@@ -1,7 +1,8 @@
-body {
-  background-color: bisque;
-}
-
-.hello {
-  color: red;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
 }
