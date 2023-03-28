@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -15,6 +20,29 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+#meals {
+  width: 100%;
+  margin: auto;
+}
+
+.meal-cards {
+  width: 90%;
+  margin: auto;
+  margin-left: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-image img {
+  width: 250px;
+  column-gap: 10px;
+  row-gap: 30px;
+}
+
+h2 {
+  font-size: 18px;
 }
 
 footer {
