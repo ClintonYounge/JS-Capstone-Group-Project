@@ -1,7 +1,18 @@
-body {
-  background-color: bisque;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 15px;
 }
 
-.hello {
-  color: red;
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
