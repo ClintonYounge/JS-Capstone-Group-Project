@@ -1,14 +1,21 @@
 const commentPopupDom = document.querySelector('.comment-popup');
 
+const closeCommentPopuup = () => {
+  const commentPopupDomChildren = commentPopupDom.children;
+  for (let i = 0; i < commentPopupDomChildren.length; i += 1) {
+    commentPopupDomChildren[i].style.display = 'none';
+  }
+};
+
 const fetchCommentContent = (commentData) => {
-  const commentPopupContainer = document.createElement('div')
-  commentPopupContainer.classList.add('comment-popup-container')
+  const commentPopupContainer = document.createElement('div');
+  commentPopupContainer.classList.add('comment-popup-container');
   commentPopupContainer.style.display = 'none';
   commentPopupContainer.setAttribute('id', commentData.idMeal);
   commentPopupDom.append(commentPopupContainer);
-  
+
   const thumbnailComment = document.createElement('img');
-  thumbnailComment.classList.add('comment-popup-thumbnail')
+  thumbnailComment.classList.add('comment-popup-thumbnail');
   thumbnailComment.src = commentData.strMealThumb;
   commentPopupContainer.append(thumbnailComment);
 
@@ -27,18 +34,17 @@ const fetchCommentContent = (commentData) => {
   commentItemDetails.classList.add('comment-item-details');
   commentPopupContainer.append(commentItemDetails);
 
-  const cuisine = document.createElement('div')
-  cuisine.classList.add('cuisine')
-  cuisine.innerHTML = `Area/Cuisine: ${commentData.strArea}`
+  const cuisine = document.createElement('div');
+  cuisine.classList.add('cuisine');
+  cuisine.innerHTML = `Area/Cuisine: ${commentData.strArea}`;
   commentItemDetails.append(cuisine);
 
-  const youtubeVideo = document.createElement('a')
-  youtubeVideo.classList.add('youtube-video')
-  youtubeVideo.href = commentData.strYoutube
-  youtubeVideo.innerHTML = 'Youtube Video'
+  const youtubeVideo = document.createElement('a');
+  youtubeVideo.classList.add('youtube-video');
+  youtubeVideo.href = commentData.strYoutube;
+  youtubeVideo.innerHTML = 'Youtube Video';
   commentItemDetails.append(youtubeVideo);
-
-}
+};
 
 window.displayOnClick = (menuIdClicked) => {
   const commentPopupDomChildren = commentPopupDom.children;
@@ -50,13 +56,6 @@ window.displayOnClick = (menuIdClicked) => {
       commentPopupDomChildren[i].style.display = 'none';
     }
   }
-}
+};
 
-const closeCommentPopuup = () => {
-  const commentPopupDomChildren = commentPopupDom.children;
-  for (let i = 0; i < commentPopupDomChildren.length; i += 1) {
-    commentPopupDomChildren[i].style.display = 'none'
-  }
-}
-
-export { fetchCommentContent };
+export default fetchCommentContent;

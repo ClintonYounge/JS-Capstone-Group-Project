@@ -1,4 +1,4 @@
-import { fetchCommentContent } from './commentPopup.js';
+import fetchCommentContent from './commentPopup.js';
 
 const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=g';
 const mealData = document.querySelector('.meal-cards');
@@ -36,4 +36,4 @@ const display = async () => {
   });
 };
 
-export { display, URL, };
+export { display, URL };
