@@ -1,9 +1,12 @@
 import fetchCommentContent from './commentPopup.js';
+import reservationPage from './reservation.js';
+import { displayLikes } from './likedMeals.js';
 
 const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=g';
+
 const mealData = document.querySelector('.meal-cards');
 
-const displayMeal = (data) => {
+const displayMeal = async (data) => {
   const meal = document.createElement('div');
   meal.classList.add('card');
   meal.innerHTML = `
@@ -25,6 +28,12 @@ const displayMeal = (data) => {
   </div>
   `;
   mealData.appendChild(meal);
+
+  // Fetch likes for the meal and update like count element
+  const response = await fetch(`${URL}?item_id=${data.idMeal}`);
+  const likes = await response.json();
+  const likeCount = meal.querySelector(`.likes-${data.idMeal} .like-count`);
+  likeCount.textContent = `${likes[0]?.likes ?? 0} likes`;
 };
 
 const display = async () => {
@@ -34,6 +43,8 @@ const display = async () => {
     displayMeal(food);
     fetchCommentContent(food);
   });
+  displayLikes();
+  reservationPage(data.meals);
 };
 
-export { display, URL };
+export default display;
