@@ -66,6 +66,15 @@ h2 {
   flex-direction: column;
   text-align: center;
   padding: 40px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  z-index: 100;
+  overflow: scroll;
 }
 
 .comment-popup-thumbnail {
