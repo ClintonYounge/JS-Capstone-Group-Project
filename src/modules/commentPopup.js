@@ -1,4 +1,8 @@
 const commentPopupDom = document.querySelector('.comment-popup');
+const invApiComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gq2xGcbQlIOM2p1edhF0/comments';
+
+// const allCommentsContainer = document.createElement('div');
+// allCommentsContainer.classList.add('all-comments-container');
 
 const closeCommentPopuup = () => {
   const commentPopupDomChildren = commentPopupDom.children;
@@ -9,6 +13,8 @@ const closeCommentPopuup = () => {
 };
 
 const fetchCommentContent = (commentData) => {
+  const invApiCommentId = `${invApiComment}?item_id=${commentData.idMeal}`
+
   const commentPopupContainer = document.createElement('div');
   commentPopupContainer.classList.add('comment-popup-container');
   commentPopupContainer.style.display = 'none';
@@ -34,17 +40,46 @@ const fetchCommentContent = (commentData) => {
   const commentItemDetails = document.createElement('div');
   commentItemDetails.classList.add('comment-item-details');
   commentPopupContainer.append(commentItemDetails);
-
+  
   const cuisine = document.createElement('div');
   cuisine.classList.add('cuisine');
   cuisine.innerHTML = `Area/Cuisine: ${commentData.strArea}`;
   commentItemDetails.append(cuisine);
-
+  
   const youtubeVideo = document.createElement('a');
   youtubeVideo.classList.add('youtube-video');
   youtubeVideo.href = commentData.strYoutube;
   youtubeVideo.innerHTML = 'Youtube Video';
   commentItemDetails.append(youtubeVideo);
+
+  const showComments = document.createElement('div');
+  showComments.classList.add('show-comments');
+  commentPopupContainer.append(showComments);
+
+  const commentHead = document.createElement('h3');
+  commentHead.classList.add('comment-head');
+  const countComments = async (invApi) => {
+    const response = await fetch(invApi);
+    const data = await response.json();
+    commentHead.innerHTML = `Comments (${data.length})`
+  }
+  countComments(invApiCommentId)
+  commentPopupContainer.append(commentHead);
+  
+  const allCommentsContainer = document.createElement('div');
+  allCommentsContainer.classList.add('all-comments-container');
+  const displayAllComments = async (invApi) => {
+    const response = await fetch(invApi);
+    const data = await response.json();
+    data.forEach(element => {
+      const userComments = document.createElement('div');
+      userComments.classList.add('user-comments');
+      userComments.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
+      allCommentsContainer.append(userComments);
+    });
+  }
+  displayAllComments(invApiCommentId)
+  commentPopupContainer.append(allCommentsContainer);
 
   const commentForm = document.createElement('form');
   commentForm.classList.add('comment-form');

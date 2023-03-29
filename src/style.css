@@ -108,6 +108,14 @@ h2 {
   font-weight: 600;
 }
 
+.all-comments-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: flex-start;
+  align-self: center;
+}
+
 .comment-form {
   margin-top: 40px;
   display: flex;
