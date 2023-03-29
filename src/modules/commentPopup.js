@@ -4,6 +4,7 @@ const closeCommentPopuup = () => {
   const commentPopupDomChildren = commentPopupDom.children;
   for (let i = 0; i < commentPopupDomChildren.length; i += 1) {
     commentPopupDomChildren[i].style.display = 'none';
+    document.body.style.overflow = 'scroll';
   }
 };
 
@@ -44,6 +45,28 @@ const fetchCommentContent = (commentData) => {
   youtubeVideo.href = commentData.strYoutube;
   youtubeVideo.innerHTML = 'Youtube Video';
   commentItemDetails.append(youtubeVideo);
+
+  const commentForm = document.createElement('form');
+  commentForm.classList.add('comment-form');
+  commentPopupContainer.append(commentForm);
+
+  const nameInputComment = document.createElement('input');
+  nameInputComment.setAttribute('type', 'text');
+  nameInputComment.classList.add('comment-name-input');
+  nameInputComment.setAttribute('placeholder', 'Your Name');
+  nameInputComment.setAttribute('required', true);
+  commentForm.append(nameInputComment);
+
+  const insightInputComment = document.createElement('textarea');
+  insightInputComment.classList.add('comment-insight-input');
+  insightInputComment.setAttribute('placeholder', 'Your Insight');
+  insightInputComment.setAttribute('required', true);
+  commentForm.append(insightInputComment);
+
+  const submitComment = document.createElement('button');
+  submitComment.classList.add('submit-comment');
+  submitComment.innerHTML = 'Comment';
+  commentForm.append(submitComment);
 };
 
 window.displayOnClick = (menuIdClicked) => {
@@ -52,6 +75,7 @@ window.displayOnClick = (menuIdClicked) => {
     const menuIdChild = parseInt(commentPopupDomChildren[i].getAttribute('id'), 10);
     if (menuIdChild === menuIdClicked) {
       commentPopupDomChildren[i].style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     } else {
       commentPopupDomChildren[i].style.display = 'none';
     }
