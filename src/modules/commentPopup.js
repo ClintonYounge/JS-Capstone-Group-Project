@@ -4,6 +4,7 @@ const closeCommentPopuup = () => {
   const commentPopupDomChildren = commentPopupDom.children;
   for (let i = 0; i < commentPopupDomChildren.length; i += 1) {
     commentPopupDomChildren[i].style.display = 'none';
+    document.body.style.overflow = 'scroll';
   }
 };
 
@@ -52,6 +53,7 @@ window.displayOnClick = (menuIdClicked) => {
     const menuIdChild = parseInt(commentPopupDomChildren[i].getAttribute('id'), 10);
     if (menuIdChild === menuIdClicked) {
       commentPopupDomChildren[i].style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     } else {
       commentPopupDomChildren[i].style.display = 'none';
     }
