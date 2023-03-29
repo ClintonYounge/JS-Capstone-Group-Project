@@ -1,6 +1,8 @@
+import reservationPage from './reservation.js';
 import { displayLikes } from './likedMeals.js';
 
 const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=g';
+
 const mealData = document.querySelector('.meal-cards');
 
 const displayMeal = async (data) => {
@@ -40,6 +42,7 @@ const display = async () => {
     displayMeal(food);
   });
   displayLikes();
+  reservationPage(data.meals);
 };
 
 export default display;
