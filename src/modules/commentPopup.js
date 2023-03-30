@@ -11,7 +11,6 @@ const closeCommentPopuup = () => {
 
 const fetchCommentContent = (commentData) => {
   const invApiCommentId = `${invApiComment}?item_id=${commentData.idMeal}`;
-
   const commentPopupContainer = document.createElement('div');
   commentPopupContainer.classList.add('comment-popup-container');
   commentPopupContainer.style.display = 'none';
