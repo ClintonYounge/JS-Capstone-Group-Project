@@ -57,6 +57,89 @@ h2 {
   margin-bottom: 10%;
 }
 
+.comment-popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  z-index: 100;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.comment-popup-thumbnail {
+  width: 400px;
+  height: 400px;
+  align-self: center;
+}
+
+.close-button-comment {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+.comment-item-heading {
+  font-size: 40px;
+}
+
+.comment-item-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.cuisine {
+  font-weight: 600;
+}
+
+.youtube-video {
+  color: black;
+  font-weight: 600;
+}
+
+.all-comments-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.comment-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.comment-name-input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 2px;
+}
+
+.comment-insight-input {
+  padding: 10px;
+  width: 250px;
+  height: 100px;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 footer {
   width: 90%;
   margin: auto;
