@@ -61,7 +61,7 @@ h2 {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(131, 126, 126, 0.6);
   backdrop-filter: blur(25px);
   z-index: 100;
   overflow: scroll;
@@ -114,6 +114,14 @@ h2 {
   width: fit-content;
   align-items: flex-start;
   align-self: center;
+}
+
+.comment-head {
+  font-size: 30px;
+}
+
+.user-comments {
+  font-size: 20px;
 }
 
 .comment-form {
