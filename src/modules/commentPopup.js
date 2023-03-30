@@ -117,7 +117,8 @@ const fetchCommentContent = (commentData) => {
     });
     nameInputComment.value = '';
     insightInputComment.value = '';
-    window.location.reload();
+    allCommentsContainer.innerHTML = '';
+    displayAllComments(invApiCommentId);
   };
   submitComment.addEventListener('click', postCommentsToInvApi);
 };

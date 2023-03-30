@@ -152,11 +152,11 @@ footer a {
 }
 
 .popup {
-  min-height: 100vh;
   width: 100%;
 }
 
-.description {
+.description,
+.reservation-details {
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -186,5 +186,41 @@ footer a {
 
 main h1 {
   width: 100%;
+  text-align: center;
+}
+
+.reserveForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.reservationList {
+  padding: 1px;
+}
+
+.reserveForm h2 {
+  align-self: center;
+}
+
+#nameInput,
+#startDate,
+#endDate,
+#subimtBtn {
+  width: 155px;
+  padding: 5px;
+  outline: none;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  border: none;
+}
+
+.ul-head {
   text-align: center;
 }
