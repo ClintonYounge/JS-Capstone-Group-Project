@@ -1,35 +1,53 @@
-import {createObject,postToApi,getApi} from "./reservation-api.js";
+import { createObject, postToApi, getApi } from './reservation-api.js';
+import { saveLocalStorage, getLocalStorage } from './localstorage.js';
+
+const createReservationItems = (id) => {
+  const array = getLocalStorage(id);
+  const reservationList = document.querySelector('.reservationList');
+  let output = '';
+  if (!array) {
+    output
+    += `<li>
+       <p>
+         Add first Rerservation
+      </p>
+    </li>`;
+  } else {
+    array.forEach((object) => {
+      output += `
+      <li>
+          <p>
+              ${object.date_start} - ${object.date_end} by
+              ${object.username}
+          </p>
+      </li>`;
+    });
+  }
+  reservationList.innerHTML = output;
+};
 
 const SubmitEvent = () => {
-    const subimtBtn = document.querySelector('#subimtBtn');
-    subimtBtn.onclick = (e)=> {
-        e.preventDefault();
-        //POST API
-        postToApi(createObject());
-        //Update ReservationList
-        getApi().then(data => {
-            console.log(data);
-        })
-    }
-}
+  const subimtBtn = document.querySelector('#subimtBtn');
+  subimtBtn.onclick = (e) => {
+    e.preventDefault();
 
-const listReservation = () => {
-    const container = document.querySelector('.reservation-details');
-    container.innerHTML = '';
-    let output = '';
-    output = 
-    `<ul class = "reservationList">
-        <li>item1 by Ahmad</li>
-    </ul>`
-    container.innerHTML = output;
-    console.log(container);
-    reservationForm(container);
-}
+    const { id } = e.target.parentElement.parentElement.parentElement;
+    // POST API
+    postToApi(createObject(id));
+    // Update ReservationList by API
+    getApi(id).then((array) => {
+      // save local
+      saveLocalStorage(array, id);
+      // invoke
+      createReservationItems(id);
+    });
+  };
+};
 
 const reservationForm = (container) => {
-    const form = document.createElement('form');
-    form.className = 'reserveForm';
-    form.innerHTML = `
+  const form = document.createElement('form');
+  form.className = 'reserveForm';
+  form.innerHTML = `
         <h2>Add new reservation</h2>
         <fieldset>
             <input type='text' 
@@ -52,10 +70,19 @@ const reservationForm = (container) => {
             <button id ="subimtBtn" type= "submit" >Reserve</button>
         </fieldset>
     </form>
-    `
-    container.appendChild(form);
-    SubmitEvent();
-}
+    `;
+  container.appendChild(form);
+  SubmitEvent();
+};
 
+const listReservation = () => {
+  const container = document.querySelector('.reservation-details');
+  const ul = document.createElement('ul');
+  ul.className = 'reservationList';
+  container.append(ul);
+  // invoke from localStorage
+  createReservationItems(container.id);
+  reservationForm(container);
+};
 
-export {listReservation};
+export default listReservation;

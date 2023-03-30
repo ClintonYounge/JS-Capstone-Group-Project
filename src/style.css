@@ -102,26 +102,16 @@ footer a {
   align-self: flex-end;
 }
 
-.reservation-details {
-  border: 2px solid green;
-}
-
-.reserveForm {
-  border: 2px solid blue;
-  padding: 1px;
-}
-
-.reservationList {
-  border: 2px solid orange;
-  padding: 1px;
-}
-
 .reserveForm {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 5px;
+}
+
+.reservationList {
+  padding: 1px;
 }
 
 .reserveForm h2 {
@@ -142,4 +132,8 @@ fieldset {
   flex-direction: column;
   padding: 2px;
   border: none;
+}
+
+.ul-head {
+  text-align: center;
 }
