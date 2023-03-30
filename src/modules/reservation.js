@@ -18,7 +18,9 @@ const createPop = (array, i) => {
                     </p>
             </div>
             <div class="reservation-details" id = ${array[i].idMeal}>
-            <h2 class="ul-head" >All Reservations:</h2>
+            <h2 class="ul-head" >
+            All Reservations:<span class="counter"></span>
+            </h2>
             </div>`;
   popupPage.innerHTML = output;
   listReservation();
