@@ -1,9 +1,6 @@
 const commentPopupDom = document.querySelector('.comment-popup');
 const invApiComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gq2xGcbQlIOM2p1edhF0/comments';
 
-// const allCommentsContainer = document.createElement('div');
-// allCommentsContainer.classList.add('all-comments-container');
-
 const closeCommentPopuup = () => {
   const commentPopupDomChildren = commentPopupDom.children;
   for (let i = 0; i < commentPopupDomChildren.length; i += 1) {
