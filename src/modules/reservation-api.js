@@ -2,12 +2,12 @@ const URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 
 const URL2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NSQ2jUNcTp3W8mj5Cd8P/reservations/?item_id=item1'
 
-const createObject =()=> {
+const createObject =(id)=> {
     const name = document.querySelector('#nameInput');
     const startDate= document.querySelector('#startDate');
     const endDate = document.querySelector('#endDate');
     const newObject = {
-        "item_id": 'item1',
+        "item_id": `${id}`,
         "username": name.value,
         "date_start": startDate.value,
         "date_end": endDate.value
