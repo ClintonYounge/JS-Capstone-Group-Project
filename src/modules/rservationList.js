@@ -1,7 +1,11 @@
 import { createObject, postToApi, getApi } from './reservation-api.js';
+
 import { saveLocalStorage, getLocalStorage } from './localstorage.js';
 
+import reservationCounter from './reservationCounter.js';
+
 const createReservationItems = (id) => {
+  reservationCounter(id);
   const array = getLocalStorage(id);
   const reservationList = document.querySelector('.reservationList');
   let output = '';
@@ -9,7 +13,7 @@ const createReservationItems = (id) => {
     output
     += `<li>
        <p>
-         Add first Rerservation
+         Add your Rerservation to see others:
       </p>
     </li>`;
   } else {
@@ -38,6 +42,7 @@ const SubmitEvent = () => {
     getApi(id).then((array) => {
       // save local
       saveLocalStorage(array, id);
+      reservationCounter(id);
       // invoke
       createReservationItems(id);
     });
