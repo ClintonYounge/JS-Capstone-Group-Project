@@ -184,6 +184,11 @@ footer a {
   align-self: flex-end;
 }
 
+main h1 {
+  width: 100%;
+  text-align: center;
+}
+
 .reserveForm {
   display: flex;
   flex-direction: column;
