@@ -108,7 +108,7 @@ h2 {
   font-weight: 600;
 }
 
-.all-comments-container{
+.all-comments-container {
   display: flex;
   flex-direction: column;
   width: fit-content;

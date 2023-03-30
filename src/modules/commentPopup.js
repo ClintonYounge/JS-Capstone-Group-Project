@@ -10,7 +10,7 @@ const closeCommentPopuup = () => {
 };
 
 const fetchCommentContent = (commentData) => {
-  const invApiCommentId = `${invApiComment}?item_id=${commentData.idMeal}`
+  const invApiCommentId = `${invApiComment}?item_id=${commentData.idMeal}`;
 
   const commentPopupContainer = document.createElement('div');
   commentPopupContainer.classList.add('comment-popup-container');
@@ -37,12 +37,12 @@ const fetchCommentContent = (commentData) => {
   const commentItemDetails = document.createElement('div');
   commentItemDetails.classList.add('comment-item-details');
   commentPopupContainer.append(commentItemDetails);
-  
+
   const cuisine = document.createElement('div');
   cuisine.classList.add('cuisine');
   cuisine.innerHTML = `Area/Cuisine: ${commentData.strArea}`;
   commentItemDetails.append(cuisine);
-  
+
   const youtubeVideo = document.createElement('a');
   youtubeVideo.classList.add('youtube-video');
   youtubeVideo.href = commentData.strYoutube;
@@ -58,28 +58,29 @@ const fetchCommentContent = (commentData) => {
   const countComments = async (invApi) => {
     const response = await fetch(invApi);
     const data = await response.json();
-    commentHead.innerHTML = `Comments (${data.length})`
-  }
-  countComments(invApiCommentId)
+    commentHead.innerHTML = `Comments (${data.length})`;
+  };
+  countComments(invApiCommentId);
   commentPopupContainer.append(commentHead);
-  
+
   const allCommentsContainer = document.createElement('div');
   allCommentsContainer.classList.add('all-comments-container');
   const displayAllComments = async (invApi) => {
     const response = await fetch(invApi);
     const data = await response.json();
-    data.forEach(element => {
+    data.forEach((element) => {
       const userComments = document.createElement('div');
       userComments.classList.add('user-comments');
       userComments.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
       allCommentsContainer.append(userComments);
     });
-  }
-  displayAllComments(invApiCommentId)
+  };
+  displayAllComments(invApiCommentId);
   commentPopupContainer.append(allCommentsContainer);
 
   const commentForm = document.createElement('form');
   commentForm.classList.add('comment-form');
+  commentForm.setAttribute('onsubmit', 'return false');
   commentPopupContainer.append(commentForm);
 
   const nameInputComment = document.createElement('input');
@@ -99,6 +100,26 @@ const fetchCommentContent = (commentData) => {
   submitComment.classList.add('submit-comment');
   submitComment.innerHTML = 'Comment';
   commentForm.append(submitComment);
+
+  const postCommentsToInvApi = async () => {
+    const userNameValue = nameInputComment.value;
+    const userInsightValue = insightInputComment.value;
+    await fetch(invApiComment, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: commentData.idMeal,
+        username: userNameValue,
+        comment: userInsightValue,
+      }),
+    });
+    nameInputComment.value = '';
+    insightInputComment.value = '';
+    window.location.reload();
+  };
+  submitComment.addEventListener('click', postCommentsToInvApi);
 };
 
 window.displayOnClick = (menuIdClicked) => {
