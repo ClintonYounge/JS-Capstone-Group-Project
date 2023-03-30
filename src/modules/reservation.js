@@ -1,3 +1,5 @@
+import {listReservation} from "./rservationList.js";
+
 const createPop = (array, i) => {
   const popupPage = document.querySelector('.popup');
   popupPage.innerHTML = '';
@@ -17,6 +19,7 @@ const createPop = (array, i) => {
             </div>
             <div class="reservation-details"></div>`;
   popupPage.innerHTML = output;
+  listReservation();
 };
 
 const removeContent = () => {
