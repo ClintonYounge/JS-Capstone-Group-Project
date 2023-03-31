@@ -51,17 +51,24 @@
   </ul>
 </details>
 
+<details>
+  <summary>Back-End APIS</summary>
+  <ul>
+    <li><a href="https://www.themealdb.com/api.php">Meals API</a></li>
+  </ul>
+  <ul>
+    <li><a href="https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270">Involvement API</a></li>
+  </ul>
 
 ### Key Features <a name="key-features"></a>
 
-- **This website is created completely using front-end technologies**
-- **This website uses 2 different APIs to get and post data**
-- **Implemented functionality**
-  - **Display meals grabbed from the Meals API**
-  - **Display likes each meal receives**
-  - **Counter displayed on main page showing the amount of meals viewable**
-  - **Comments popup that allows you to post to and view comments from the Involvement API**
-  - **Reservations popup that allows you to reserve and view reservations from the Involvement API**
+- **This website is created completely using front and backend technologies**
+- **This website uses 2 different APIs to post and fetch data**
+- **Display meals grabbed from the Meals API**
+- **Display likes each meal receives**
+- **Counter displayed on main page showing the amount of meals viewable**
+- **Comments popup that allows you to post to and view comments from the Involvement API**
+- **Reservations popup that allows you to reserve and view reservations from the Involvement API**
 - **Linters: Lighthouse, Webhint, Stylelint, and Eslint**
 - **Asyncronous ES6 Javascript**
 - **Webpack**
