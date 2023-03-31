@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#meals {
+  width: 100%;
+  margin: auto;
+
+  /* display: none; */
+}
+
+.meal-cards {
+  width: 90%;
+  margin: auto;
+  margin-left: 10%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 10px;
+  row-gap: 30px;
+}
+
+.card-image img {
+  width: 250px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.second-part {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+  margin-left: 25px;
+  margin-bottom: 10%;
+}
+
+.comment-popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(131, 126, 126, 0.6);
+  backdrop-filter: blur(25px);
+  z-index: 100;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.comment-popup-thumbnail {
+  width: 400px;
+  height: 400px;
+  align-self: center;
+}
+
+.close-button-comment {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+.comment-item-heading {
+  font-size: 40px;
+}
+
+.comment-item-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.cuisine {
+  font-weight: 600;
+}
+
+.youtube-video {
+  color: black;
+  font-weight: 600;
+}
+
+.all-comments-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.comment-head {
+  font-size: 30px;
+}
+
+.user-comments {
+  font-size: 20px;
+}
+
+.comment-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.comment-name-input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 2px;
+}
+
+.comment-insight-input {
+  padding: 10px;
+  width: 250px;
+  height: 100px;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: gray;
+}
+
+.popup {
+  width: 100%;
+}
+
+.description,
+.reservation-details {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.description img {
+  width: 70%;
+  height: 400px;
+  margin: 3px auto;
+}
+
+.reservationP {
+  text-align: justify;
+}
+
+.displayNone {
+  display: none;
+}
+
+.closeBtn {
+  padding: 2px;
+  width: 50px;
+  align-self: flex-end;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.reserveForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.reservationList {
+  padding: 1px;
+}
+
+.reserveForm h2 {
+  align-self: center;
+}
+
+#nameInput,
+#startDate,
+#endDate,
+#subimtBtn {
+  width: 155px;
+  padding: 5px;
+  outline: none;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  border: none;
+}
+
+.ul-head {
+  text-align: center;
+}
