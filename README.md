@@ -59,6 +59,7 @@
   <ul>
     <li><a href="https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270">Involvement API</a></li>
   </ul>
+  </details>
 
 ### Key Features <a name="key-features"></a>
 
