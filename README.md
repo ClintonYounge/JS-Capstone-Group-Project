@@ -74,7 +74,7 @@
 - [Live Demo Link](https://clintonyounge.github.io/JS-Capstone-Group-Project/dist/)
 
 - Below is a link to our video presentation of the project.
-  - [My Loom Video](https://www.loom.com/share/9b1b568f4223478b885f127548656032)
+  - [Our video presentation](https://drive.google.com/file/d/1hRy_XAbnKDwebZIs29KVo9Mjdifl4XRT/view?usp=share_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
