@@ -73,8 +73,8 @@
 
 - [Live Demo Link](https://clintonyounge.github.io/JS-Capstone-Group-Project/dist/)
 
-> Below is a link to our video presentation of the project.
-- [My Loom Video](https://www.loom.com/share/9b1b568f4223478b885f127548656032)
+- Below is a link to our video presentation of the project.
+  - [My Loom Video](https://www.loom.com/share/9b1b568f4223478b885f127548656032)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,8 +137,8 @@ Run the `npx jest` command in your console to run the tests.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Responsive layout for most devices]**
-- [ ] **[Improved User Interface]**
+-**[Responsive layout for most devices]**
+- **[Improved User Interface]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
