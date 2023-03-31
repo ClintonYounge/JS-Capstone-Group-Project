@@ -107,6 +107,7 @@ https://desktop.github.com/
 ### Install
 
 Run the `npm install` command in your console to install all necessary dependencies.
+
 ### Run tests
 
 To run tests, run the following command:
